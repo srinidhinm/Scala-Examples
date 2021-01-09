@@ -16,14 +16,17 @@ import java.io.{FileNotFoundException, IOException}
             Mysore
             Chennai
         2. Compile using command 'scalac FileReader.scala'
-        3. Run 'scala FileReader Cities.txt'
+        3. Run 'scala ReadFile Cities.txt'
             Output:
                 Bangalore
                 Mysore
                 Chennai
-        4. Run 'scala FileReader Invalid.txt'
+        4. Run 'scala ReadFile Invalid.txt'
             Output:
                 'Couldn't find that file [Invalid.txt]'
+        5. Run 'scala ReadFile'
+            Output:
+                Please provide file Name along with the Argument e.g., 'scala ReadFile '{fileName}''
 */
 
 class FileReader extends App {
@@ -40,10 +43,13 @@ class FileReader extends App {
     }
 }
 
-object Reader{
+object ReadFile{
     def main(args: Array[String]){
-        val fileName =  new FileReader();
-        fileName.readandPrintFile(args(0))
+        if(args.length==0){
+            println("Please provide file Name along with the Argument e.g., 'scala ReadFile '{fileName}''")
+        }else{
+            val fileName =  new FileReader();
+            fileName.readandPrintFile(args(0))
+        }
     }
 }
-    
