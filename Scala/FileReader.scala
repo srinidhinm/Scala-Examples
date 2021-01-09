@@ -11,4 +11,4 @@ object FileReader extends App {
         case e: FileNotFoundException => println("Couldn't find that file ["+filename+"]")
         case e: IOException => println("Got an IOException!")
     }
-}
+} 
