@@ -30,7 +30,7 @@ import scala.collection.JavaConverters._
             4. Record offset in Kafka
             5. Record offset of partition in Kafka Topic
 */
-object KafkaConsumerExample extens App {
+object KafkaConsumerExample extends App {
 
     val kafkaConsumerProperties:Properties = new Properties();
     kafkaConsumerProperties.put("group.id", "kafkaConsumerExample")
