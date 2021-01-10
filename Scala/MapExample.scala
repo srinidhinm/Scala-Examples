@@ -7,7 +7,8 @@ How to Run:
 
 Output:
     Capital of Karnataka is : Bangalore
-    Capital of Tamil Nadu is : Chennai
+    Capital of India is : New Delhi
+    Capital of Nepal is : Katmandu
     State xyz not present in Map, Please add xyz into Map
     Values in statesCapitalMap : MapLike(Bangalore, Chennai, Trivendrum)
     Check if statesCapitalMap is empty : false
@@ -18,12 +19,18 @@ Output:
 object MapExample {
    def main(args: Array[String]) {
       val statesCapitalMap = Map("Karnataka" -> "Bangalore", "Tamil Nadu" -> "Chennai", "Kerala" -> "Trivendrum")
-      val countryCapitalMap = Map("India" -> "Bangalore", "Nepal" -> "Chennai", "Singapore" -> "Trivendrum")
+      val countryCapitalMap = Map("India" -> "New Delhi", "Nepal" -> "Katmandu", "Srilanka" -> "Colombo")
+
+      val unionMap = statesCapitalMap++countryCapitalMap;
 
       val numbers: Map[Int, Int] = Map()
 
+     //val unionMap1 = statesCapitalMap + numbers -- This is invalid case as Map types are different
+
       println( "Capital of Karnataka is : " + statesCapitalMap("Karnataka") )
-      println( "Capital of Tamil Nadu is : " + statesCapitalMap("Tamil Nadu" ) )
+      println( "Capital of India is : " + countryCapitalMap("India" ) )
+      println( "Capital of Nepal is : " + unionMap("Nepal" ) )
+
       //This has to be chcked for previous 2 cases as well
       if (statesCapitalMap.contains("xyz")){
         println( "Capital of xyz is : " + statesCapitalMap("xyz" ) )
